@@ -38,6 +38,12 @@ void sideline(int x, int y,int h, int w) {
 
 }
 
+void wallTexture(int x, int y, int h, int w) {
+	glColor3ub(0, 0, 0);
+	sideline(x, y, h, w);
+	sideline(x + 20, y - 35, h + 300, w - 8);
+}
+
 void sidewall(int x,int y) {
 	glColor3ub(70, 70, 70);
 	glBegin(GL_POLYGON);
@@ -46,12 +52,13 @@ void sidewall(int x,int y) {
 	glVertex2i(0,SCREENHEIGHT);
 	glEnd();
 
-	glColor3ub(0, 0, 0);
-	sideline(x + 50, y + 60, 100, 10);
-	sideline(x + 100, y + 80, 100, 10);
-	sideline(x + 150, y + 100, 100, 10);
-	sideline(x + 200, y + 120, 100, 10);
-	sideline(x + 150, y + 140, 100, 10);
+	
+	wallTexture( x + 50, y + 60, 100, 10);
+	wallTexture(x + 110, y + 80, 100, 10);
+	wallTexture(x + 170, y + 100, 100, 10);
+	wallTexture(x + 230, y + 125, 100, 10);
+	
+
 }
 
 void window(int x, int y, int h, int w) {
@@ -90,6 +97,10 @@ void display() {
 	//wall
 	glColor3ub(70, 70, 70);
 	rectangle(SCREENWIDTH / 3,  SCREENHEIGHT/2 + 0.1*SCREENHEIGHT, SCREENHEIGHT, SCREENWIDTH);
+	glColor3ub(0, 0, 0);
+	circle(SCREENWIDTH / 3 + 50,SCREENHEIGHT - 20, 5, 50);
+	circle(SCREENWIDTH / 3 + 100, SCREENHEIGHT - 20, 5, 50);
+	circle(SCREENWIDTH / 3 + 150, SCREENHEIGHT - 20, 5, 50);
 	//sidewall
 	sidewall(0, SCREENHEIGHT*0.78);
 	//line
