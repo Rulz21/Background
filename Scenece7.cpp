@@ -65,9 +65,9 @@ void flower(int x, int y, int r) {
 }
 
 void floor() {
-    int a = 76;
-    int b = 76;
-    int c = 112;
+    int a = 219;
+    int b = 122;
+    int c = 73;
     glColor3ub(a, b, c);
     rectangle(0, SCREENHEIGHT / 3, 80, SCREENWIDTH - 400);
 
@@ -122,6 +122,13 @@ void floor() {
 
     glColor3ub(0, 0, 0);
     rectangle(0, SCREENHEIGHT/3 + 75, 5, SCREENWIDTH - 400);
+
+    glBegin(GL_POLYGON);
+    glVertex2i(0, SCREENHEIGHT / 3 + 10);
+    glVertex2i(0, SCREENHEIGHT / 3 + 5);
+    glVertex2i(SCREENWIDTH - 400, SCREENHEIGHT / 3 + 70);
+    glVertex2i(SCREENWIDTH - 405, SCREENHEIGHT / 3 + 75);
+    glEnd();
 
     glColor3ub(0, 0, 0);
     glBegin(GL_POLYGON);
@@ -200,3 +207,4 @@ int main(int argc, char** argv) {
     initGL();
     glutMainLoop();
 }
+
