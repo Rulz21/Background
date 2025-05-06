@@ -86,10 +86,26 @@ void pot(int x, int y, int h, int w) {
 	
 }
 
-void plant(int x,int y) {
+void plant(int x, int y) {
 	glColor3ub(55, 125, 34);
 	rectangle(x, y, 60, 8);
-}
+
+	circle(x + 15, y + 60, 10, 50);
+	circle(x - 10, y + 55, 10, 50);
+
+	glBegin(GL_POLYGON);
+	glVertex2i(x + 16, y + 70);
+	glVertex2i(x + 35, y + 60);
+	glVertex2i(x + 16, y + 50);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glVertex2i(x - 12, y + 65);
+	glVertex2i(x - 30, y + 55);
+	glVertex2i(x - 12, y + 45);
+	glEnd();
+};
+
 
 void door(int x, int y, int w) {
 	int h = w;
